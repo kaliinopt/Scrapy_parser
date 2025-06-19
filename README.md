@@ -1,4 +1,4 @@
-# Alkoteka Parser
+# Scrapy_parser
 
 Парсер товаров с сайта [alkoteka.com](https://alkoteka.com), написанный с использованием [Scrapy](https://scrapy.org/). Поддерживает авторизацию по региону (город Краснодар), сбор по категориям, постраничную загрузку через API и извлечение информации из карточек товара.
 
@@ -41,7 +41,7 @@ poetry shell
 4. Запусти парсер
 
 ```bash
-scrapy crawl spider_name -O result.json
+scrapy crawl alkoteka -O result.json
 ```
 
 ## Что можно улучшить 
