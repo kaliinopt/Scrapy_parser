@@ -3,6 +3,7 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+import random
 from scrapy import signals
 
 # useful for handling different item types with a single interface
@@ -98,3 +99,16 @@ class AlkotekaParserDownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info("Spider opened: %s" % spider.name)
+
+
+class CustomProxyMiddleware(object):
+    def __init__(self):
+        self.proxy = None
+
+    def process_request(self, request, spider):
+        if "proxy" not in request.meta:
+            request.meta["proxy"] = self.get_proxy(spider.crawler)
+
+    def get_proxy(self, crawler):
+        self.proxy = crawler.settings.get("PROXY_ADDRESS")
+        return self.proxy

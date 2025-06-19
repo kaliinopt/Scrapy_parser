@@ -10,6 +10,24 @@ python = "^3.12"
 scrapy = "^2.13.2"
 
 
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 88  
+target-version = ['py38']  
+include = '\.pyi?$'  
+exclude = '''
+/(
+    \.git
+    | \.venv
+    | build
+    | dist
+    | __pycache__
+)/
+'''
