@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "alcoteka-parser"
+version = "0.1.0"
+description = "This is Scrapy parser for product information from alkoteka.com for the Krasnodar region"
+authors = ["kaliinopt <youngtrillpill@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+scrapy = "^2.13.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
